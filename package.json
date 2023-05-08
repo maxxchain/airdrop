@@ -1,7 +1,7 @@
 {
   "name": "hardhat-project",
   "scripts": {
-    "generate": " node src/generateMerkle.ts"
+    "generate": " node src/generateMerkle.js"
   },
   "devDependencies": {
     "@nomicfoundation/hardhat-toolbox": "^2.0.2",
