@@ -2,8 +2,9 @@
   "name": "hardhat-project",
   "scripts": {
     "generate": "node src/generateMerkle.js",
+    "start": " node src/server.js",
     "compile": "npx hardhat compile",
-    "start": " node src/server.js"
+    "deploy": "npx hardhat run scripts/deploy.ts --network maxxTestnet"
   },
   "devDependencies": {
     "@nomicfoundation/hardhat-chai-matchers": "^1.0.0",

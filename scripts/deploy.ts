@@ -1,4 +1,5 @@
-import { ethers } from "hardhat";
+import { ethers, run } from "hardhat";
+// import "@nomicfoundation/hardhat-verify";
 require('dotenv').config()
 
 async function main() {
@@ -7,10 +8,12 @@ async function main() {
   const maxxAirdrop = await MaxxAirdrop.deploy(merkleRoot);
 
   await maxxAirdrop.deployed();
+  console.log(`MaxxAirdrop deployed to ${maxxAirdrop.address}`);
 
-  console.log(
-    `MaxxAirdrop deployed to ${maxxAirdrop.address}`
-  );
+  await run("verify:verify", {
+    address: maxxAirdrop.address,
+    constructorArguments: [merkleRoot],
+  });
 }
 
 // We recommend this pattern to be able to use async/await everywhere
