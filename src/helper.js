@@ -1,9 +1,10 @@
 const Web3 = require('web3');
 const { addresses } = require("./input");
 const SHA256 = require('crypto-js/sha256');
+const airdropABI = require('../artifacts/contracts/MaxxAirdrop.sol/MaxxAirdrop.json').abi;
+require('dotenv').config()
 
 const web3 = new Web3(process.env.RPC);
-const airdropABI = require('./path/to/your/airdropABI.json');
 const { merkleTree } = require('./generateMerkle');
 const airdropContractAddress = process.env.CONTRACT;
 const airdropContract = new web3.eth.Contract(airdropABI, airdropContractAddress);
