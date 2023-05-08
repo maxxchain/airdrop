@@ -1,4 +1,4 @@
-const {addresses} = require("./input");
+const { addresses } = require("./input");
 const { MerkleTree } = require('merkletreejs');
 const SHA256 = require('crypto-js/sha256');
 
@@ -19,3 +19,6 @@ const merkleRoot = merkleTree.getHexRoot();
 
 console.log('Merkle root:', merkleRoot);
 
+module.exports = {
+    merkleTree
+}

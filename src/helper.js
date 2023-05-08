@@ -4,6 +4,7 @@ const SHA256 = require('crypto-js/sha256');
 
 const web3 = new Web3(process.env.RPC);
 const airdropABI = require('./path/to/your/airdropABI.json');
+const { merkleTree } = require('./generateMerkle');
 const airdropContractAddress = process.env.CONTRACT;
 const airdropContract = new web3.eth.Contract(airdropABI, airdropContractAddress);
 const userPrivateKey = process.env.PRIV_KEY;
